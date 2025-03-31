@@ -1,0 +1,33 @@
+If you want to fetch comics and metadata automatically, 
+you can use the JSON interface. The URLs look like this:
+
+https://xkcd.com/info.0.json (current comic)
+
+or:
+
+https://xkcd.com/614/info.0.json (comic #614)
+
+Those files contain, in a plaintext and easily-parsed format: comic titles,
+URLs, post dates, transcripts (when available), and other metadata.
+
+Create a webpage that is similar to TikTok with infinite scrolling.
+
+Reference repo - https://github.com/IsaacGemal/wikitok/tree/main
+
+Keep the code simple. Use only HTML, TailwindCSS and vanilla typescript.
+
+Ensure each page displays only one image with num, day, month, year, title displayed in small text at the bottom.
+
+Implementation Tips
+
+Infinite Scrolling: You can load the next set of items (e.g., 10 or 20) via AJAX/fetch calls when the user nears the bottom of the page, mimicking TikTok’s endless feed.
+
+Attribution and Limits: Many free APIs require attribution or have daily call limits. Be sure to read their usage guidelines.
+
+Styling: Use a full-width background image with overlay text (title, description) for that cinematic, TikTok-style look. Add smooth vertical or horizontal scrolling.
+
+Mix & Match: You can also combine multiple APIs (e.g., NASA images interspersed with random quotes or “fun facts” from Wikipedia) to create an eclectic or curated user experience.
+
+Use the num from here - https://xkcd.com/info.0.json (current comic) to figure out how many total comics are available, then make a random call to any number between that and 1.
+
+No server code. No back-end. Everything should be built in the front-end interface. Without using any complicated framework.
