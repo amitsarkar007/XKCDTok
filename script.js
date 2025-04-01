@@ -10,7 +10,28 @@ class XKCDTok {
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'
         ];
+        this.setupAboutModal();
         this.init();
+    }
+
+    setupAboutModal() {
+        const aboutButton = document.getElementById('about-button');
+        const aboutModal = document.getElementById('about-modal');
+        const closeButton = document.getElementById('close-about');
+
+        aboutButton.addEventListener('click', () => {
+            aboutModal.classList.add('active');
+        });
+
+        closeButton.addEventListener('click', () => {
+            aboutModal.classList.remove('active');
+        });
+
+        aboutModal.addEventListener('click', (e) => {
+            if (e.target === aboutModal) {
+                aboutModal.classList.remove('active');
+            }
+        });
     }
 
     async init() {

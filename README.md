@@ -2,6 +2,8 @@
 
 A TikTok-style interface for browsing XKCD comics. Built with vanilla JavaScript and CSS, this web application allows you to scroll through random XKCD comics in a vertical feed, similar to TikTok's interface.
 
+🌐 Deployed at [xkcdtok.com](https://xkcdtok.com)
+
 ## Features
 
 - 📱 TikTok-style vertical scrolling interface
