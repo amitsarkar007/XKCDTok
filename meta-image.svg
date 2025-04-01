@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- White background -->
+    <rect width="1200" height="630" fill="#FFFFFF"/>
+
+    <!-- "xkcdTok" in a modern and minimal style -->
+    <g transform="translate(150, 200)" font-family="Arial, sans-serif" font-size="120" font-weight="normal">
+        <text x="0" y="0" fill="#6B7280">xkcd</text>
+        <text x="240" y="0" fill="#000000">Tok</text>
+    </g>
+</svg>

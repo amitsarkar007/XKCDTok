@@ -1,4 +1,4 @@
-# XKCD Tok
+# XKCDTok
 
 A TikTok-style interface for browsing XKCD comics. Built with vanilla JavaScript and CSS, this web application allows you to scroll through random XKCD comics in a vertical feed, similar to TikTok's interface.
 
@@ -15,6 +15,9 @@ A TikTok-style interface for browsing XKCD comics. Built with vanilla JavaScript
 - ⚡ No dependencies - pure JavaScript and CSS
 - 🔍 Smart preloading of comics
 - 🎯 Snap scrolling for smooth navigation
+- ℹ️ About modal with project information
+- 🛡️ Robust error handling and loading states
+- 🔒 CORS handling via proxy service
 
 ## How to Use
 
@@ -34,6 +37,7 @@ A TikTok-style interface for browsing XKCD comics. Built with vanilla JavaScript
    - Scroll down to load more comics
    - Each comic shows its number, title, and publication date
    - Images automatically scale to fit your screen
+   - Click the About button to learn more about the project
 
 ## Technical Details
 
@@ -50,6 +54,8 @@ A TikTok-style interface for browsing XKCD comics. Built with vanilla JavaScript
 - **Error Handling**: Gracefully handles network issues and API errors
 - **Responsive Design**: Works on any screen size
 - **Snap Scrolling**: Ensures comics align perfectly with your viewport
+- **About Modal**: Provides project information and credits
+- **CORS Handling**: Uses allorigins.win proxy to handle cross-origin requests
 
 ### API Usage
 
@@ -57,10 +63,13 @@ Uses the XKCD JSON API with the following endpoints:
 - `https://xkcd.com/info.0.json` - Get latest comic info
 - `https://xkcd.com/{num}/info.0.json` - Get specific comic by number
 
+All API requests are proxied through allorigins.win to handle CORS restrictions.
+
 ## Credits
 
 - Comics from [XKCD](https://xkcd.com)
 - Inspired by [WikiTok](https://github.com/IsaacGemal/wikitok)
+- CORS handling via [allorigins.win](https://allorigins.win)
 
 ## License
 
