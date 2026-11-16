@@ -17,7 +17,7 @@ A TikTok-style interface for browsing XKCD comics. Built with vanilla JavaScript
 - 🎯 Snap scrolling for smooth navigation
 - ℹ️ About modal with project information
 - 🛡️ Robust error handling and loading states
-- 🔒 CORS handling via proxy service
+- 🔒 CORS handling via Netlify server-side proxy
 
 ## How to Use
 
@@ -55,7 +55,7 @@ A TikTok-style interface for browsing XKCD comics. Built with vanilla JavaScript
 - **Responsive Design**: Works on any screen size
 - **Snap Scrolling**: Ensures comics align perfectly with your viewport
 - **About Modal**: Provides project information and credits
-- **CORS Handling**: Uses allorigins.win proxy to handle cross-origin requests
+- **CORS Handling**: Netlify rewrites /xkcd-api/* to xkcd.com server-side (see netlify.toml), so the browser only makes same-origin requests. Replaces the allorigins.win proxy, whose outage broke the site.
 
 ### API Usage
 
@@ -63,13 +63,12 @@ Uses the XKCD JSON API with the following endpoints:
 - `https://xkcd.com/info.0.json` - Get latest comic info
 - `https://xkcd.com/{num}/info.0.json` - Get specific comic by number
 
-All API requests are proxied through allorigins.win to handle CORS restrictions.
+All API requests go through the same-origin /xkcd-api/ path, which Netlify proxies to xkcd.com (netlify.toml) because xkcd.com sends no CORS headers.
 
 ## Credits
 
 - Comics from [XKCD](https://xkcd.com)
 - Inspired by [WikiTok](https://github.com/IsaacGemal/wikitok)
-- CORS handling via [allorigins.win](https://allorigins.win)
 
 ## License
 
