@@ -5,7 +5,7 @@ class XKCDTok {
         this.currentMaxComic = 0;
         this.loadedComics = new Set();
         this.isLoading = false;
-        this.proxyUrl = 'https://api.allorigins.win/raw?url=';
+        this.apiBase = '/xkcd-api'; // same-origin proxy to xkcd.com via netlify.toml redirect (avoids CORS and third-party proxy outages)
         this.monthNames = [
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'
@@ -36,7 +36,8 @@ class XKCDTok {
 
     async init() {
         try {
-            const response = await fetch(this.proxyUrl + encodeURIComponent('https://xkcd.com/info.0.json'));
+            const response = await fetch(`${this.apiBase}/info.0.json`);
+            if (!response.ok) throw new Error(`xkcd API returned ${response.status}`);
             const data = await response.json();
             this.currentMaxComic = data.num;
             
@@ -97,7 +98,8 @@ class XKCDTok {
 
     async loadComic(num) {
         try {
-            const response = await fetch(this.proxyUrl + encodeURIComponent(`https://xkcd.com/${num}/info.0.json`));
+            const response = await fetch(`${this.apiBase}/${num}/info.0.json`);
+            if (!response.ok) throw new Error(`xkcd API returned ${response.status} for comic ${num}`);
             const comic = await response.json();
             this.createComicSlide(comic);
         } catch (error) {
