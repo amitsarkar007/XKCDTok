@@ -1,0 +1,9 @@
+# Server-side proxy for the XKCD JSON API.
+# xkcd.com sends no Access-Control-Allow-Origin header, so browsers cannot
+# fetch it cross-origin. Netlify rewrites /xkcd-api/* to xkcd.com server-side,
+# making the API same-origin for the site (replaces the allorigins.win proxy).
+[[redirects]]
+  from = "/xkcd-api/*"
+  to = "https://xkcd.com/:splat"
+  status = 200
+  force = true
